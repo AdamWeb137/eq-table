@@ -1,0 +1,91 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
+    background-color: rgb(185, 185, 185);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: black;
+    box-shadow: 5px 5px 10px black;
+    width: fit-content;    
+    padding:10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.content-table{
+    display: flex;
+    justify-content: center;
+}
+
+.content-table > * {
+    margin:5px;
+    padding:5px;
+    border:1px solid black;
+}
+
+table {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+table, tr, td, th {
+    border-collapse: collapse;
+    border:1px solid black;
+}
+
+td, th {
+    padding:3px;
+}
+
+tr:nth-child(odd){
+    background-color: rgb(235, 235, 235);
+}
+
+tr:nth-child(even){
+    background-color: rgb(207, 207, 207);
+}
+
+button {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    margin-top:5px;
+}
+
+.selected, .selected * {
+    color:white;
+    background-color: black;
+}
+
+
+.box {
+    margin:5px;
+    padding:5px;
+    border:1px solid black;
+    box-shadow: 5px 5px 10px grey;
+}
+
+.table-row:not(.selected):hover, .table-row:not(.selected):hover *{
+    color:white;
+    background-color: rgb(73, 73, 73);
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}

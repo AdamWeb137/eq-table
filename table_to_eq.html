@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Table to Equation</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/regression/2.0.1/regression.min.js"></script>
+        <script src="https://www.desmos.com/api/v1.5/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
+        <script src="toeq.js"></script>
+        <script>
+            let intable = undefined;
+            window.addEventListener("load",()=>{
+                intable = new InputTable(document.querySelector("#input"));
+            });
+        </script>
+    </head>
+    <body>
+        <div class="content">
+            <h1>Table to Equation</h1>
+            <div class="content-table">
+                <div id="form">
+                    <div class="box">
+                        Type of equation:
+                        <ul>
+                            <li><input type="radio" name="type" id="l" value="l" checked>Linear</li>
+                            <li><input type="radio" name="type" id="q" value="q">Quadratic</li>
+                            <li><input type="radio" name="type" id="e" value="e">Exponential</li>
+                            <li><input type="radio" name="type" id="c" value="c">Cubic</li>
+                            <li><input type="radio" name="type" id="log" value="log">Logarithmic</li>
+                        </ul>
+                    </div>
+                    <hr color="black">
+
+                    <div id="addrow" class="box">
+                        <p style="text-align: center;">Add Point</p>
+                        (x: <input type="number" id="new_x">,
+                        f(x): <input type="number" id="new_fx">)<br>
+                        <button onmouseup="intable.add_point('#new_x','#new_fx')" style="display:block;">add point</button>
+                    </div>
+
+                    <div id="editrow" class="box" style="display: none;">
+                        <p style="text-align: center;">Edit Point</p>
+                        (x: <input type="number" id="old_x">,
+                        f(x): <input type="number" id="old_fx">)<br>
+                        <div class="center">
+                            <button onmouseup="intable.edit_point('#old_x','#old_fx')">edit point</button> / 
+                            <button onmouseup="intable.delete_point('#old_x','#old_fx')">delete point</button>
+                        </div>
+                    </div>
+
+                    <hr color="black">
+                    <table id="input" style="width:100%; box-shadow: 5px 5px 10px gray;"></table>
+
+                </div>
+                <div id="output">
+                    <div class="box">
+                        <h3 id="eq">Equation will output here</h3>
+                    </div>
+                    <div class="box" id="desmos" style="width:300px; height:300px;"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
