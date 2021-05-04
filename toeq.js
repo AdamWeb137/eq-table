@@ -143,7 +143,7 @@ class InputTable {
             case "q":
                 return regression.polynomial(this.rows, {order:2})
             case "e":
-                return regression.power(this.rows)
+                return regression.exponential(this.rows)
             case "c":
                 return regression.polynomial(this.rows, {order:3})
             case "log":
@@ -182,7 +182,7 @@ class InputTable {
             case "q":
                 return `${eq[0]}*x^2 + ${eq[1]}*x + ${eq[2]}`;
             case "e":
-                return `${eq[0]}*x^{{${eq[1]}}}`;
+                return `${eq[0]}*e^{{${eq[1]}*x}}`;
             case "c":
                 return `${eq[0]}*x^3 + ${eq[1]}*x^2 + ${eq[2]}*x + ${eq[3]}`;
             case "log":

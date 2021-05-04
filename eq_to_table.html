@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Equation to Table</title>
+        <link rel="stylesheet" href="main.css">
+        <script src="totable.js"></script>
+        <script>
+            window.addEventListener("load",()=>{
+                OutputTable.update();
+            });
+        </script>
+    </head>
+    <body>
+        <div class="content">
+            <h1>Equation to Table</h1>
+            <div class="center">
+                <a href="table_to_eq.html">(Table to Equation)</a>
+            </div>
+            <div class="content-table">
+                <div id="form">
+                    <div class="box">
+                        <h2>Equation: </h2>
+                        f(<input type="text" id="var_name" value="x" style="width: 30px;" minlength="1" maxlength="3">) = 
+                        <input type="text" id="eq" value="x^2">
+                    </div>
+                    <hr color="black">
+
+                    <div class="box">
+                        Start: <input type="number" id="start" value="0"><br>
+                        Step: <input type="number" id="step" value="1" style="margin-top: 5px;">
+                    </div>
+                    <hr color="black">
+
+                    <div class="box">
+                        <button style="display: block;" onmouseup="OutputTable.update();">Update Table</button>
+                    </div>
+
+                </div>
+                <div id="output">
+                    <table id="out_table" style="width:350px; box-shadow: 5px 5px 10px gray;">
+                        <tbody><tr>
+                            <td colspan="2" class="click_arrow" onmouseup="OutputTable.move_table(-1);">&#9650;</td>
+                        </tr></tbody>
+                        <tbody id="out_body"></tbody>
+                        <tbody><tr>
+                            <td colspan="2" class="click_arrow" onmouseup="OutputTable.move_table(1);">&#9660;</td>
+                        </tr></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -89,3 +89,27 @@ button {
     margin-right: auto;
     width: fit-content;
 }
+
+.click_arrow{
+    background-color: rgb(104, 104, 104);
+    text-align: center;
+    color: black;
+    user-select: none;
+}
+
+.click_arrow:hover {
+    background-color: rgb(73, 73, 73);
+    cursor: pointer;
+    color: white;
+}
+
+.click_arrow:active {
+    background-color: black;
+    color: white;
+}
+
+a {
+    color:black;
+    text-decoration: underline;
+    text-align: center;
+}
